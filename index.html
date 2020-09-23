@@ -4,32 +4,57 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
+    <link rel="stylesheet" href="./style.css">
 </head>
 <body>
     <div id="app">
-        <span v-if="change">
-            <label for="username">用户账户</label>
-            <input type="text" id="username" placeholder="用户账号" key="username">
-        </span>
-        <span v-else>
-            <label for="email">用户邮箱</label>
-            <input type="text" id="email" placeholder="用户邮箱" key="email">
-        </span>
-        <button @click="click">按钮</button>
+        <div v-if="obj.length!=0">
+            <table>
+                <thead>
+                    <tr>
+                        <th></th>
+                        <th>书籍名称</th>
+                        <th>出版日期</th>
+                        <th>价格</th>
+                        <th>购买数量</th>
+                        <th>操作</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr v-for="(o,i) in obj" v-if="obj.length!=0">
+                        <td>{{o.order}}</td>
+                        <td>{{o.bookName}}</td>
+                        <td>{{o.date}}</td>
+                        <td>￥{{o.price.toFixed(3)}}</td>  
+                        <td>
+                            <button @click="clickSub(i)"  :disabled="o.number<=1">-</button>
+                            {{o.number}}
+                            <button @click="clickAdd(i)">+</button>
+                        </td>
+                        <td><button @click="del(i)">移除</button></td>
+                    </tr>
+                    <!-- <tr v-else>
+                        <td>购物车已清空</td>
+                    </tr> -->
+                    
+                    <!-- 熟悉for的嵌套 -->
+                    <!-- <tr v-for="(o,i) in obj">
+                        <td v-for="item in o">
+                            {{item}}
+                        </td>
+                    </tr> -->
+                </tbody>
+            </table>
+            <div>
+                价格{{TotalPrice|showPrice}}
+            </div>
+        </div>
+        <div v-else>购物车已清空</div>
+        
     </div>
-    <script src="../vue.js"></script>
-    <script>
-        const App=new Vue({
-            el:"#app",    //用来挂载要管理的元素
-            data:{
-                change:true
-            },
-            methods:{
-                click(){
-                    this.change=!this.change
-                }
-            }
-        });
-    </script>
+
+    <script src="../../vue.js"></script>
+    <script src="main.js"></script>  
+    
 </body>
 </html>
