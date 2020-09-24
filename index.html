@@ -4,57 +4,140 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
+    <link rel="stylesheet" href="./init.css">
     <link rel="stylesheet" href="./style.css">
 </head>
-<body>
-    <div id="app">
-        <div v-if="obj.length!=0">
-            <table>
-                <thead>
-                    <tr>
-                        <th></th>
-                        <th>书籍名称</th>
-                        <th>出版日期</th>
-                        <th>价格</th>
-                        <th>购买数量</th>
-                        <th>操作</th>
-                    </tr>
-                </thead>
-                <tbody>
-                    <tr v-for="(o,i) in obj" v-if="obj.length!=0">
-                        <td>{{o.order}}</td>
-                        <td>{{o.bookName}}</td>
-                        <td>{{o.date}}</td>
-                        <td>￥{{o.price.toFixed(3)}}</td>  
-                        <td>
-                            <button @click="clickSub(i)"  :disabled="o.number<=1">-</button>
-                            {{o.number}}
-                            <button @click="clickAdd(i)">+</button>
-                        </td>
-                        <td><button @click="del(i)">移除</button></td>
-                    </tr>
-                    <!-- <tr v-else>
-                        <td>购物车已清空</td>
-                    </tr> -->
-                    
-                    <!-- 熟悉for的嵌套 -->
-                    <!-- <tr v-for="(o,i) in obj">
-                        <td v-for="item in o">
-                            {{item}}
-                        </td>
-                    </tr> -->
-                </tbody>
-            </table>
-            <div>
-                价格{{TotalPrice|showPrice}}
+<body class="body">
+    <!-- <div><h1 class="title">Jason</h1></div> -->
+    <div class="resume">
+        <div class="left">
+            <div class="person">
+                <div id="photo">
+                    <img src="./image/photo.jpg" alt="">
+                </div>
+                <div id="name">孙 枫</div>
+            </div>
+            <div class="info">
+                <nav class="nav">基 础 信 息</nav>
+                <!-- <div id="birth"></div>
+                <div id="school"></div>
+                <div id="major"></div> -->
+                <ul class="ul">
+                    <li class="li" id="birth">
+                        <span class="key">出生年月：</span>
+                        <span class="value">1997-11</span>
+                    </li>
+                    <li class="li" id="school">
+                        <span class="key">学校：</span>
+                        <span class="value">浙江大学</span>
+                    </li>
+                    <li class="li" id="major">
+                        <span class="key">专业：</span>
+                        <span class="value">电子信息</span>
+                    </li>
+                </ul>
+            </div>
+            <div class="contact">
+                <nav class="nav">联 系 方 式</nav>
+                <!-- <div id="birth"></div>
+                <div id="school"></div>
+                <div id="major"></div> -->
+                <ul class="ul">
+                    <li class="li" id="birth">
+                        <span class="key">手机：</span>
+                        <span class="value">15205186308</span>
+                    </li>
+                    <li class="li" id="school">
+                        <span class="key">邮箱：</span>
+                        <span class="value">Sun_fng@163.com</span>
+                    </li>
+                    <li class="li">
+                        <span class="key">博客：</span>
+                        <a href="https://blog.csdn.net/sf_qw39">Jason</a>
+                    </li>
+                    <li class="li" id="major">
+                        <span class="key">地址：</span>
+                        <span class="value">浙江省杭州市西湖区余杭塘路866号</span>
+                    </li>
+                </ul>
             </div>
         </div>
-        <div v-else>购物车已清空</div>
-        
+        <div class="right">
+            <div class="title">
+                <div class="content">PERSONAL RESUME</div>
+                <div class="logo"></div>
+            </div>
+            <div class="main">
+                <div class="education">
+                    <nav class="theme" id="edu">教育经历</nav>
+                    <div class="content">
+                        <div class="college">
+                            <h1 class="school">南京邮电大学（2016.09-2020.06）</h1>
+                            <div class="schoolThing">绩点：4.15</div>
+                            <div class="schoolThing">校级三好学生、校一等奖学金、亨通企业奖学金、优秀团员</div>
+                        </div>
+                        <div class="graduate">
+                            <h1 class="school">浙江大学（2020.09至今）</h1>
+                            <div class="schoolThing">
+                                电子信息 研究生在读
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="projects">
+                    <nav class="theme">项目经历</nav>
+                    <div class="content">
+                        <div class="MC">
+                            <h1 class="projectName">课程建设（2020.06至今）</h1>
+                            <div class="description">
+                                项目用处：为我院本科生激光雷达课程开发实验软件。
+                                <br>
+                                负责部分：界面开发。
+                                <br>
+                                技术实现：利用Qt搭建界面框架，使用qss设置界面样式，并与算法进程通信。
+                                <br>
+                                下载地址：<a href=""></a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="contests">
+                    <nav class="theme">获奖经历</nav>
+                    <div class="content">
+                        <!-- <div class="math">江苏省高等数学竞赛三等奖（2017-06）</div>
+                        <div class="mathematical modeling">美国大学生数学建模竞赛二等奖（2018-04）</div>
+                        <div class="algorithm">蓝桥杯C++程序设计竞赛省二等奖（2019-03）</div> -->
+                        <ol class="rewards">
+                            <li class="rewardName">江苏省高等数学竞赛三等奖（2017-06）</li>
+                            <li class="rewardName">美国大学生数学建模竞赛二等奖（2018-04）</li>
+                            <li class="rewardName">蓝桥杯C++程序设计竞赛省二等奖（2019-03）</li>
+                        </ol>
+                    </div>
+                </div>
+                <div class="skills">
+                    <nav class="theme">个人技能</nav>
+                    <div class="content">
+                        <ol class="abilities">
+                            <li class="skillName">熟悉数据结构与算法</li>
+                            <li class="skillName">了解HTTP协议</li>
+                            <li class="skillName">熟悉C++、Qt编程</li>
+                            <li class="skillName">有一定python编程基础</li>
+                            <li class="skillName">了解HTML、CSS、JS相关内容</li>
+                            <li class="skillName">了解Vue相关内容</li>
+                        </ol>
+                    </div>
+                </div>
+                <div class="hobbies">
+                    <nav class="theme">兴趣爱好</nav>
+                    <div class="content">
+                        喜欢古典交响与现代欧美流行音乐
+                        <br>
+                        喜欢架子鼓等打击乐
+                    </div>
+                </div>
+            </div>
+        </div>
     </div>
-
-    <script src="../../vue.js"></script>
-    <script src="main.js"></script>  
     
 </body>
 </html>
