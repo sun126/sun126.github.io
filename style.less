@@ -1,0 +1,318 @@
+@left:30%;
+@right:70%;
+
+.body{
+    background-image: url("./image/bgi.jpg");
+    background-size:auto;
+    height:960px;
+    //background-repeat: no-repeat;
+    background-size:100% 100%;
+}
+
+#prompt{
+    height:80px;
+    font-size:50px;
+    text-align: center;
+    line-height:80px;
+    color:#bfa;
+    //margin-top:30px;
+}
+
+.mid{
+    width:400px;
+    margin:0 auto;
+    height:265px;
+    position: relative;
+    #leftPic{
+        img{
+            vertical-align: bottom;
+        }
+        position: absolute;
+        bottom:0px;
+        left:-300px;
+    }
+    
+    #rightGif{
+        img{
+            vertical-align: bottom;
+        }
+        position: absolute;
+        bottom:0px;
+        right:-300px;
+    }
+}
+
+.life{
+    position: relative;
+    width:400px;
+    height:265px;
+    margin:0 auto;
+    overflow: hidden;
+    .title{
+        height:25px;
+        font-size:20px;
+        text-align: center;
+        color:white;
+        font-family: KaiTi;
+    }
+    //background-color: #bfa;
+    .imgList{
+        width:2000px;
+        height:240px;
+        //margin:0 auto;
+        //background-color: #fff;
+        list-style: none;
+        display:flex;
+        // li{
+        //     margin:0 20px;
+        // }
+        position: absolute;
+        left:0px;
+        top:25px;
+    }
+    .nav{
+        position: absolute;
+        display:flex;
+        bottom:10px;
+        //width:100px;
+        left:50%;
+        transform:translateX(-50px);
+        a{
+            width:10px;
+            height:10px;
+            margin:0 5px;
+            background-color: red;
+            opacity: 0.5;
+        }
+        a:hover{
+            background-color:black;
+        }
+    }
+}
+
+#resumeTitle{
+    text-align: center;
+    font-family: KaiTi;
+    font-size: 20px;
+    color:white;
+    margin-top:20px;
+    margin-bottom:5px;
+}
+
+.resume{
+    width:1000px;
+    height:100%;
+    margin:0px auto;
+    margin-top:30px;
+    display:flex;
+}
+
+.left{
+    //float:left;
+    width:@left;
+    height:100%;
+    background-color: #0070C0;
+    .person{
+        width:100%;
+        margin-top:20px;
+        //height:35%;
+        //background-color: #bfa;
+        #photo{
+            width:150px;
+            height:200px;
+            margin:0 auto;
+            padding-top:35px;
+        }
+        #name{
+            text-align: center;
+            font-size:30px;
+            font-family: KaiTi;
+            color:white;
+            margin-top:25px;
+        }
+    }
+    .info{
+        width:100%;
+        margin-top:50px;
+        //height:25%;
+        //background-color: #bfa;
+        .nav{
+            width:80%;
+            height:40px;
+            text-align: center;
+            line-height: 40px;
+            margin-left: auto;
+            background-color:#005393;
+            color:white;
+            font-family:KaiTi;
+            font-size:25px;
+            box-shadow: 2px 2px 15px #000;
+        }
+        .ul{
+            width:80%;
+            margin-top:20px;
+            margin-left: auto;
+            font-family:KaiTi;
+            font-size:22px;
+            color:white;
+            .li{
+                padding:10px 5px;
+                .value{
+                    font-size:20px;
+                }
+            }
+        }
+    }
+
+    .contact{
+        width:100%;
+        margin-top:50px;
+        .nav{
+            width:80%;
+            height:40px;
+            text-align: center;
+            line-height: 40px;
+            margin-left: auto;
+            background-color:#005393;
+            color:white;
+            font-family:KaiTi;
+            font-size:25px;
+            box-shadow: 2px 2px 15px #000;
+        }
+        .ul{
+            width:80%;
+            margin-top:20px;
+            margin-left: auto;
+            font-family:KaiTi;
+            font-size:22px;
+            color:white;
+            .li{
+                padding:10px 5px;
+                .value{
+                    font-size:20px;
+                }
+                a{
+                    color:white;
+                    font-size:20px;
+                    //text-decoration: none
+                }
+            }
+        }
+    }
+}
+
+.right{
+    //float:left;
+    width:@right;
+    height:100%;
+    background-color: #F2F2F2;
+    .title{
+        display:flex;
+        width:200px;
+        height:70px;
+        margin-left:auto;
+        //background-color: #bfa;
+        .content{
+            line-height: 70px;
+            font-size:SimHei ;
+        }
+        .logo{
+            width:20px;
+            height:20px;
+            margin-top:24px;
+            margin-left:10px;
+            background-color: #005393;
+        }
+    }
+    .main{
+        //background-color: #bfa;
+        margin-left:30px;
+        .theme{
+            height:30px;
+            line-height: 30px;
+            font-size:22px;
+            font-family: SimSun;
+            font-weight: 800;
+            border-bottom: 1px solid black;
+            margin-top:20px;
+        }
+        #edu{
+            margin-top:0;
+        }
+        .content{
+            margin-left:24px;
+        }
+        .education{
+            .content{
+                .school{
+                    .name();
+                }
+                .schoolThing{
+                    .description();
+                }
+            }
+        }
+        .projects{
+            .content{
+                .projectName{
+                    .name();
+                }
+                .description{
+                    .description();
+                    a{
+                        color:black;
+                        font-size:16px;
+                        //text-decoration: none
+                    }
+                }
+            }
+        }
+        .contests{
+            .content{
+                .rewards{
+                    margin-top:16px;
+                    .rewardName{
+                        list-style: disc;
+                        .description();
+                        margin-left:38px;
+                    }
+                }
+            }
+        }
+        .skills{
+            .content{
+                .abilities{
+                    margin-top:16px;
+                    .skillName{
+                        list-style: disc;
+                        .description();
+                        margin-left:38px;
+                    }
+                }
+            }
+        }
+        .hobbies{
+            .content{
+                .description();
+                margin-left:38px;
+                margin-top:16px;
+            }
+        }
+    }
+}
+
+.name{
+    margin-top:10px;
+    font-family: SimSun;
+    font-size:18px;
+    font-weight: 600;
+    margin-bottom: 8px;;
+}
+.description{
+    width:600px;
+    font-family: SimSun;
+    font-size:16px;
+    //margin-top:8px;
+    margin-left:22px;
+    line-height: 22px;
+}
